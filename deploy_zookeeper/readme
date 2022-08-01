@@ -1,0 +1,1 @@
+helm install staging-finance-zookeeper -f values_staging.yaml bitnami/zookeeper -n staging-finance-zookeeper
