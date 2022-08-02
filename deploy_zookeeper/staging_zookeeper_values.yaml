@@ -315,7 +315,7 @@ lifecycleHooks: {}
 resources:
   limits: 
     memory: 300Mi
-    cpu: 100m
+    cpu: 1
   requests:
     memory: 100Mi
     cpu: 30m
@@ -583,7 +583,7 @@ serviceAccount:
 persistence:
   ## @param persistence.enabled Enable ZooKeeper data persistence using PVC. If false, use emptyDir
   ##
-  enabled: true
+  enabled: false
   ## @param persistence.existingClaim Name of an existing PVC to use (only when deploying a single replica)
   ##
   existingClaim: ""
@@ -601,7 +601,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for ZooKeeper data volume
   ##
-  size: 8Gi
+  size: 1Gi
   ## @param persistence.annotations Annotations for the PVC
   ##
   annotations: {}
