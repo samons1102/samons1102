@@ -1,1 +1,1 @@
-helm install staging-finance-redis -f staging_redis_values.yaml bitnami/redis-cluster -n staging-finance-redis
+helm install redis-cluster -f staging_redis_values.yaml bitnami/redis-cluster -n staging-finance-redis

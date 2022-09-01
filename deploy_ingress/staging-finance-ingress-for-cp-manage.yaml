@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-for-cp-manage
+  namespace: staging-finance
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: finance.foxvspig.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: svc-cp-manage 
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - finance.foxvspig.com
+    secretName: finance-foxvspig-com
