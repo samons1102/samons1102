@@ -16,7 +16,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "ebs-sc"
   redis:
     password: ""
 
@@ -299,7 +299,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: ""
+  storageClass: "ebs-sc"
   ## @param persistence.annotations Persistent Volume Claim annotations
   ##
   annotations: {}
