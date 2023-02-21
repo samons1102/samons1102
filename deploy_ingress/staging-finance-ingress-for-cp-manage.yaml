@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: ingress-for-cp-manage
   namespace: staging-finance
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
   ingressClassName: nginx
   rules:
@@ -11,7 +13,7 @@ spec:
       paths:
       - backend:
           service:
-            name: svc-cp-manage 
+            name: svc-cp-manage
             port:
               number: 80
         path: /
@@ -19,4 +21,4 @@ spec:
   tls:
   - hosts:
     - finance.foxvspig.com
-    secretName: finance-foxvspig-com
+    secretName: ingress-for-cp-manage
