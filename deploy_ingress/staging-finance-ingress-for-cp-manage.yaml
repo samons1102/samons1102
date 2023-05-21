@@ -5,6 +5,8 @@ metadata:
   namespace: staging-finance
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
+    #nginx.ingress.kubernetes.io/rewrite-target: /finance/
+    nginx.ingress.kubernetes.io/app-root: /finance
 spec:
   ingressClassName: nginx
   rules:
@@ -17,7 +19,7 @@ spec:
             port:
               number: 80
         path: /
-        pathType: ImplementationSpecific
+        pathType: Prefix
   tls:
   - hosts:
     - finance.foxvspig.com
