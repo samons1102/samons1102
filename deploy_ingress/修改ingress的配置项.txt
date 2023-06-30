@@ -1,0 +1,6 @@
+k8s的ingress通过使用configmap来进行配置的，因此要修改ingress的配置，需要修改configmap
+1）首先获取ingress同命名空间下的configmap,修改里面的值
+以修改使用use-gzip和enable-brotli为例，编辑此configmap，在data段，加入以上两个配置。
+2）确认修改成功之后，就需要ingress-nginx-controller加载新的configmap的配置，就需要进入到controller的pod中，
+执行nginx -s reload来重新加载配置，这样就达到目的了
+
