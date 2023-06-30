@@ -4,3 +4,5 @@ k8s的ingress通过使用configmap来进行配置的，因此要修改ingress的
 2）确认修改成功之后，就需要ingress-nginx-controller加载新的configmap的配置，就需要进入到controller的pod中，
 执行nginx -s reload来重新加载配置，这样就达到目的了
 
+ingress的配置参见
+https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#gzip-disable
